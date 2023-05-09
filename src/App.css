@@ -1,38 +1,37 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap");
+
+* {
+	font-family: "Signika Negative", sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.mySwiper {
+	width: 100%;
+	height: 60vh;
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@media (0px <= width <= 300px) {
+	.mySwiper {
+		height: 110vh;
+	}
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@media (300px <= width <= 812px) {
+	.mySwiper {
+		height: 110vh;
+	}
 }
 
-.App-link {
-  color: #61dafb;
+@media (420px <= width <= 812px) {
+	.mySwiper {
+		height: 115vh;
+	}
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@media (812px <= width <= 1024px) {
+	.mySwiper {
+		height: 105vh;
+	}
 }

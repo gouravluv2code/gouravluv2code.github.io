@@ -163,6 +163,36 @@ export default function ScrollContainer() {
 				<SwiperSlide>
 					<PackageTier
 						className='project-card'
+						tools='Generative-AI | ReactJS | HTML | CSS | Node.js'
+						tag='Code Conversion & Debugging Web App.'
+						span='1 day'
+						title='Intelligent Code Editor'
+						img={"code-converter.png"}
+						// typePlan=''
+						checked={true}
+						// options={options}
+						github='https://github.com/gouravluv2code/code_converter'
+						deploy='https://visionary-belekoy-d265f0.netlify.app/'
+					/>
+				</SwiperSlide>
+				<SwiperSlide>
+					<PackageTier
+						className='project-card'
+						tools='HTML | CSS | ReactJS | NodeJS | ExpressJS | MongoDB'
+						tag='Indian physical and online jewelry retailer.'
+						span='5 days'
+						title='Intelligent Code Editor'
+						img={"caratlane.png"}
+						// typePlan=''
+						checked={true}
+						// options={options}
+						github='https://github.com/gouravluv2code/CaretLane-clone'
+						deploy='https://caratlane.vercel.app'
+					/>
+				</SwiperSlide>
+				<SwiperSlide>
+					<PackageTier
+						className='project-card'
 						tools='Javascript | React JS | Redux | Chakra UI'
 						tag='Online Store For Kids & Baby Products.'
 						span='5 days'

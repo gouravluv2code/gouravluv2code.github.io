@@ -101,7 +101,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
 					fontSize='lg'
 					fontWeight='400'
 					colorScheme={useColorModeValue("green", "yellow")}
-					>
+				>
 					HEY! I'M Gourav
 				</Badge>
 				<CloseButton
@@ -127,7 +127,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
 			<NavItems
 				text='Skills'
 				icon={FaTools}
-				location='#about'
+				location='#skills'
 				close={onClose}
 				className='nav-link skills'
 			/>

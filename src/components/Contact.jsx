@@ -20,61 +20,22 @@ import {
 	VStack,
 } from "@chakra-ui/react";
 import React from "react";
-import { useRef } from "react";
+import { useState } from "react";
 import { BsGithub, BsLinkedin, BsPerson } from "react-icons/bs";
 import { MdEmail, MdOutlineEmail } from "react-icons/md";
 import { CgPhone } from "react-icons/cg";
 export default function Contact() {
 	const { hasCopied, onCopy } = useClipboard("gt9675tiwari@gmail.com");
-	const toast = useToast();
-	const name = useRef("");
-	const email = useRef("");
-	const message = useRef("");
+	const [name, setName] = useState("");
+	const [email, setEmail] = useState("");
+	const [message, setMessage] = useState("");
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		const user = {
-			name: name.current.value,
-			email: email.current.value,
-			msg: message.current.value,
-		};
-		console.log(user);
-		const url = "https://worried-costume-lion.cyclic.app/portFriends";
-		if (user.name === "" || user.email === "" || user.msg === "") {
-			toast({
-				title: "Message not sent.",
-				description: "Please fill out all fields.",
-				status: "error",
-				duration: 4000,
-				isClosable: true,
-			});
-		} else {
-			fetch(url, {
-				method: "POST",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify(user),
-			})
-				.then((res) => res.json())
-				.then((data) => {
-					console.log(data);
-					toast({
-						title: "Message sent.",
-						description:
-							"We've received your message and will get back to you shortly.",
-						status: "success",
-						duration: 4000,
-						isClosable: true,
-					});
-				})
-				.catch((err) => {
-					console.log(err);
-				});
-
-			name.current.value = "";
-			email.current.value = "";
-			message.current.value = "";
-		}
+		// send form data to server
+		setName("");
+		setEmail("");
+		setMessage("");
 	};
 	return (
 		<Flex mt='-5' align='center' justify='center' id='contact'>
@@ -87,7 +48,7 @@ export default function Contact() {
 						spacing={{ base: 4, md: 8, lg: 20 }}
 						w={{ base: "full", md: "full", lg: "500px" }}>
 						<Stack
-							
+
 							w={{ base: "320px", md: "full", lg: "700px" }}
 							justifyContent='center'
 							alignItems='left'
@@ -214,7 +175,7 @@ export default function Contact() {
 									transition: "all 0.2s ease-out",
 									boxShadow: "0 10px 50px -20px #b0c4de",
 								}}>
-								<VStack spacing={5}>
+								<form onSubmit={handleSubmit} action="https://formspree.io/f/xlekvryd" method="post" spacing={8} target="_blank">
 									<FormControl isRequired>
 										<FormLabel>Name</FormLabel>
 
@@ -224,15 +185,15 @@ export default function Contact() {
 											/>
 											<Input
 												type='text'
-												name='name'
+												name='Name'
 												placeholder='Your Name'
-												ref={name}
+											    value={name}
 											/>
 										</InputGroup>
 									</FormControl>
 
 									<FormControl isRequired>
-										<FormLabel>Email</FormLabel>
+										<FormLabel mt={"7px"}>Email</FormLabel>
 
 										<InputGroup>
 											<InputLeftElement
@@ -240,22 +201,22 @@ export default function Contact() {
 											/>
 											<Input
 												type='email'
-												name='email'
+												name='Email'
 												placeholder='Your Email'
-												ref={email}
+											value={email}
 											/>
 										</InputGroup>
 									</FormControl>
 
 									<FormControl isRequired>
-										<FormLabel>Message</FormLabel>
+										<FormLabel mt={"7px"}>Message</FormLabel>
 
 										<Textarea
-											name='message'
+											name='Message'
 											placeholder='Your Message'
 											rows={6}
-											// resize='none'
-											ref={message}
+									    	// resize='none'
+										    value={message}
 										/>
 									</FormControl>
 
@@ -267,11 +228,12 @@ export default function Contact() {
 											bg: "blue.500",
 										}}
 										type='submit'
-										// isFullWidth
-										onClick={handleSubmit}>
+									// isFullWidth
+									// onClick={handleSubmit}
+									>
 										Send Message
 									</Button>
-								</VStack>
+								</form>
 							</Box>
 						</Stack>
 					</VStack>

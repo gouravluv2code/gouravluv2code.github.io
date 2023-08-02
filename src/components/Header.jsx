@@ -14,7 +14,7 @@ import React from "react";
 import resume from "../Assests/Gourav-Tiwari-Resume.pdf"
 const Header = () => {
 	const handleResume=()=>{
-		window.open("https://drive.google.com/file/d/10uZqYo9mWOJw0UyveX4k0gVcMLtaxf-_/view?usp=sharing","_blank")
+		window.open("https://drive.google.com/file/d/1TJ8LsZD5Jo_lPcVnTUJ9znyv2RU90xTZ/view?usp=sharing","_blank")
 	}
 	return (
 		<Container

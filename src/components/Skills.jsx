@@ -2,6 +2,7 @@ import {
 	Box,
 	Button,
 	ButtonGroup,
+	Center,
 	Container,
 	Flex,
 	Grid,
@@ -15,6 +16,13 @@ import {
 	useColorModeValue,
 } from "@chakra-ui/react";
 import React from "react";
+import Github from "../Assests/Github.png"
+import canva from "../Assests/canva.png"
+import cyclic from "../Assests/cyclic.jfif"
+import netlify from "../Assests/netlify.png"
+import postman from "../Assests/postman.png"
+import vscode from "../Assests/vscode.jfif"
+
 
 const SkillsArray = [
 	{ title: "CSS", icon: "css.png" },
@@ -28,36 +36,44 @@ const SkillsArray = [
 	{ title: "Express JS", icon: "express.png" },
 	{ title: "Mongo DB", icon: "mongodb.png" }
 ];
+const ToolsArray = [
+	{ title: "VS Code", icon: vscode },
+	{ title: "Netlify", icon: netlify },
+	{ title: "Cyclic", icon: cyclic },
+	{ title: "Canva", icon: canva },
+	{ title: "Postman", icon: postman }
+];
 
 const Skills = () => {
 	return (
-		<Container
-			m='0'
-			maxW='100%'
-			p='5'
-			w='full'
-			h='full'
-			bg={useColorModeValue("gray.100", "gray.900")}
+		<>
+			<Container
+				m='0'
+				maxW='100%'
+				p='5'
+				w='full'
+				h='full'
+				bg={useColorModeValue("gray.100", "gray.900")}
 			>
-			<Grid
-				boxShadow={useColorModeValue("lg", "dark-lg")}
-				_hover={{
-					transform: "translateY(-5px)",
-					transition: "all 0.2s ease-out",
-					boxShadow: "0 10px 50px -20px #b0c4de",
-				}}
-				w='100%'
-				h='auto'
-				p={8}
-				templateColumns={{
-					base: "repeat(1, 1fr)",
-					md: "repeat(2, 1fr)",
-				}}
-				flexDirection={{ base: "column-reverse", md: "row" }}
-				placeItems='center'
-				bg={useColorModeValue("white", "#000000")}
-				mt={12}>
-				<GridItem width={{ base: "full", md: "90%" }}>
+				<Grid
+					boxShadow={useColorModeValue("lg", "dark-lg")}
+					_hover={{
+						transform: "translateY(-5px)",
+						transition: "all 0.2s ease-out",
+						boxShadow: "0 10px 50px -20px #b0c4de",
+					}}
+					w='100%'
+					h='auto'
+					p={8}
+					templateColumns={{
+						base: "repeat(1, 1fr)",
+						md: "repeat(2, 1fr)",
+					}}
+					flexDirection={{ base: "column-reverse", md: "row" }}
+					placeItems='center'
+					bg={useColorModeValue("white", "#000000")}
+					mt={12}>
+					{/* <GridItem width={{ base: "full", md: "90%" }}>
 					<Box maxW='80rem'>
 						<Heading
 							size={"xl"}
@@ -101,129 +117,245 @@ const Skills = () => {
 							</Button>
 						</Link>
 					</Box>
-				</GridItem>
-				<GridItem
-					// border='1px solid red'
-					id='skills'
-					mb={4}
-					width={{ base: "full", md: "50%m" }}
-					height='full'>
-					<Heading
-						size={"xl"}
-						mb={10}
-						ml='6'
-						// fontFamily={"cursive"}
-						color={useColorModeValue("black", "gray.400")}
-						>
-						My Skills
-					</Heading>
-					<Stack>
-						<ButtonGroup
-							spacing='6'
+				</GridItem> */}
+					<GridItem
+						// border='1px solid red'
+						id='skills'
+						mb={4}
+						width={{ base: "full", md: "50%m" }}
+						height='full'>
+						<Heading
+							size={"xl"}
+							mb={10}
+							ml='6'
+							// fontFamily={"cursive"}
 							color={useColorModeValue("black", "gray.400")}
-							variant='ghost'
-							display='grid'
-							gridTemplateColumns={{
-								base: "repeat(1, 1fr)",
-								md: "repeat(1, 1fr)",
-								lg: "repeat(2, 1fr)",
-								"2xl": "repeat(4, 1fr)",
-							}}
-							gridGap='1rem'>
-							<Tooltip label='HTML' placement='top-start'>
-								<Box
-									display='grid'
-									placeItems='center'
-									fontWeight='semibold'
-									p={2}
-									ml='6'
-									rounded='md'
-									bg={useColorModeValue(
-										"#e7e7e7",
-										"gray.800"
-									)}
-									w={{ base: "80%", md: "90%" }}
-									color={useColorModeValue(
-										"#666676",
-										"gray.400"
-									)}
-									_hover={{
-										bg: useColorModeValue(
-											"black",
+						>
+							My Skills
+						</Heading>
+						<Stack>
+							<ButtonGroup
+								spacing='6'
+								color={useColorModeValue("black", "gray.400")}
+								variant='ghost'
+								display='grid'
+								gridTemplateColumns={{
+									base: "repeat(1, 1fr)",
+									md: "repeat(1, 1fr)",
+									lg: "repeat(2, 1fr)",
+									"2xl": "repeat(3, 1fr)",
+								}}
+								gridGap='1rem'>
+								<Tooltip label='HTML' placement='top-start'>
+									<Box
+										display='grid'
+										placeItems='center'
+										fontWeight='semibold'
+										p={2}
+										ml='6'
+										rounded='md'
+										bg={useColorModeValue(
+											"#e7e7e7",
+											"gray.800"
+										)}
+										w={{ base: "80%", md: "90%" }}
+										color={useColorModeValue(
+											"#666676",
 											"gray.400"
-										),
-										color: useColorModeValue(
-											"white",
-											"black"
-										),
-										cursor: "pointer",
-									}}
-									className='skills-card'>
-									<Flex align={"center"} w='100%'>
-										<Image
-											className='skills-card-img'
-											src='/html.png'
-											alt='js'
-											w='25px'
-										/>
-										<Text
-											className='skills-card-name'
-											as='span'
-											ml={{ base: "4", md: "2" }}
-											isTruncated>
-											HTML
-										</Text>
-									</Flex>
-								</Box>
-							</Tooltip>
-							{SkillsArray.map(({ title, icon }, idx) => {
-								return (
-									<Tooltip
-										label={title}
-										placement='top-start'
-										key={idx}>
-										<Box
-											className='skills-card'
-											display='grid'
-											placeItems='center'
-											fontWeight='semibold'
-											p={2}
-											rounded='md'
-											bg="#e7e7e7"
-											_dark={{ bg: "gray.800",color: "gray.400" }}
-											color='#666676'
-											_hover={{
-												bg: "gray.400",
-												color: "white",
-												cursor: "pointer",
-											}}
-											w={{ base: "80%", md: "90%" }}
-											textAlign='center'>
-											<Flex align={"center"} w='100%'>
-												<Image
-													className='skills-card-img'
-													src={icon}
-													alt='js'
-													w='25px'
-												/>
+										)}
+										_hover={{
+											bg: useColorModeValue(
+												"black",
+												"gray.400"
+											),
+											color: useColorModeValue(
+												"white",
+												"black"
+											),
+											cursor: "pointer",
+										}}
+										className='skills-card'>
+										<Flex align={"center"} w='100%'>
+											<Image
+												className='skills-card-img'
+												src='/html.png'
+												alt='js'
+												w='25px'
+											/>
+											<Text
+												className='skills-card-name'
+												as='span'
+												ml={{ base: "4", md: "2" }}
+												isTruncated>
+												HTML
+											</Text>
+										</Flex>
+									</Box>
+								</Tooltip>
+								{SkillsArray.map(({ title, icon }, idx) => {
+									return (
+										<Tooltip
+											label={title}
+											placement='top-start'
+											key={idx}>
+											<Box
+												className='skills-card'
+												display='grid'
+												placeItems='center'
+												fontWeight='semibold'
+												p={2}
+												rounded='md'
+												bg="#e7e7e7"
+												_dark={{ bg: "gray.800", color: "gray.400" }}
+												color='#666676'
+												_hover={{
+													bg: "gray.400",
+													color: "white",
+													cursor: "pointer",
+												}}
+												w={{ base: "80%", md: "90%" }}
+												textAlign='center'>
+												<Flex align={"center"} w='100%'>
+													<Image
+														className='skills-card-img'
+														src={icon}
+														alt='js'
+														w='25px'
+													/>
 
-												<Text
-													className='skills-card-name'
-													as='span'
-													ml={{ base: "4", md: "2" }}
-													isTruncated>
-													{title}
-												</Text>
-											</Flex>
-										</Box>
-									</Tooltip>
-								);
-							})}
-						</ButtonGroup>
-					</Stack>
-				</GridItem>
-			</Grid>
-		</Container>
+													<Text
+														className='skills-card-name'
+														as='span'
+														ml={{ base: "4", md: "2" }}
+														isTruncated>
+														{title}
+													</Text>
+												</Flex>
+											</Box>
+										</Tooltip>
+									);
+								})}
+							</ButtonGroup>
+						</Stack>
+					</GridItem>
+
+					<GridItem width={{ base: "full", md: "90%" }} mb={20}>
+						<Heading
+							size={"xl"}
+							mb={10}
+							ml='6'
+							color={useColorModeValue("black", "gray.400")}
+						>
+							TOOLS
+						</Heading>
+						<Stack>
+							<ButtonGroup
+								spacing='6'
+								color={useColorModeValue("black", "gray.400")}
+								variant='ghost'
+								display='grid'
+								gridTemplateColumns={{
+									base: "repeat(1, 1fr)",
+									md: "repeat(1, 1fr)",
+									lg: "repeat(2, 1fr)",
+									"2xl": "repeat(3, 1fr)",
+								}}
+								gridGap='1rem'>
+								<Tooltip label='Github' placement='top-start'>
+									<Box
+										display='grid'
+										placeItems='center'
+										fontWeight='semibold'
+										p={2}
+										ml='6'
+										rounded='md'
+										bg={useColorModeValue(
+											"#e7e7e7",
+											"gray.800"
+										)}
+										w={{ base: "80%", md: "90%" }}
+										color={useColorModeValue(
+											"#666676",
+											"gray.400"
+										)}
+										_hover={{
+											bg: useColorModeValue(
+												"black",
+												"gray.400"
+											),
+											color: useColorModeValue(
+												"white",
+												"black"
+											),
+											cursor: "pointer",
+										}}
+									>
+										<Flex align={"center"} w='100%'>
+											<Image
+												src={Github}
+												alt='js'
+												w='35px'
+											/>
+											<Text
+												as='span'
+												ml={{ base: "4", md: "2" }}
+												isTruncated>
+												Github
+											</Text>
+										</Flex>
+									</Box>
+								</Tooltip>
+								{ToolsArray.map(({ title, icon }, idx) => {
+									return (
+										<Tooltip
+											label={title}
+											placement='top-start'
+											key={idx}>
+											<Box
+												className='skills-card'
+												display='grid'
+												placeItems='center'
+												fontWeight='semibold'
+												p={2}
+												rounded='md'
+												bg="#e7e7e7"
+												_dark={{ bg: "gray.800", color: "gray.400" }}
+												color='#666676'
+												_hover={{
+													bg: "gray.400",
+													color: "white",
+													cursor: "pointer",
+												}}
+												w={{ base: "80%", md: "90%" }}
+												textAlign='center'>
+												<Flex align={"center"} w='100%'>
+													<Image
+														className='skills-card-img'
+														src={icon}
+														alt='js'
+														w='35px'
+
+													/>
+
+													<Text
+														className='skills-card-name'
+														as='span'
+														ml={{ base: "4", md: "2" }}
+														isTruncated>
+														{title}
+													</Text>
+												</Flex>
+											</Box>
+										</Tooltip>
+									);
+								})}
+							</ButtonGroup>
+						</Stack>
+					</GridItem>
+
+				</Grid>
+			</Container>
+		</>
 	);
 };
 

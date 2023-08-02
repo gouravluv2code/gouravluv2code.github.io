@@ -3,7 +3,7 @@ import { Box, Button, Flex, Icon, Text, } from "@chakra-ui/react";
 import resume from "../Assests/Gourav-Tiwari-Resume.pdf"
 const NavItems = ({ text, icon, location, close, className, id }) => {
 	const handleResume=()=>{
-		window.open("https://drive.google.com/file/d/10uZqYo9mWOJw0UyveX4k0gVcMLtaxf-_/view?usp=sharing","_blank")
+		window.open("https://drive.google.com/file/d/1TJ8LsZD5Jo_lPcVnTUJ9znyv2RU90xTZ/view?usp=sharing","_blank")
 	}
 	return (
 		<Box onClick={close}

@@ -34,7 +34,7 @@ export default function About({heading,paragraph,id}) {
 					_dark={{
 						color: "#b0c4de",
 					}}
-					textAlign='center'
+					textAlign='left'
 					id="user-detail-intro"
 					mt='20px'
 					mb='20px'>

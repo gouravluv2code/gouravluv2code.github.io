@@ -1,4 +1,5 @@
 import {
+	Box,
 	Container,
 	Grid,
 	GridItem,
@@ -9,7 +10,7 @@ import React from "react";
 import GitHubCalendar from "react-github-calendar";
 const GitHubStats = () => {
 	return (
-		<Container
+			<Container
 			m='0'
 			maxW='100%'
 			p='5'
@@ -23,17 +24,18 @@ const GitHubStats = () => {
 					transition: "all 0.2s ease-out",
 					boxShadow: "0 10px 50px -20px #b0c4de",
 				}}
+				autoFlow="dense"
 				w='100%'
 				p={8}
 				templateColumns={{
-					base: "repeat(1, 1fr)",
+					base: "1fr",
 					md: "repeat(3, 1fr)",
 				}}
 				gridGap={3}
 				placeItems='center'
 				bg={useColorModeValue("white", "#000000")}>
 				<GridItem
-					width={{ base: "full", md: "100%" }}
+					// width={{ base: "full", md: "100%" }}
 					colSpan={{ base: "1", md: "2" }}
 					// border='1px solid red'
 				>
@@ -49,7 +51,7 @@ const GitHubStats = () => {
 				</GridItem>
 				<GridItem
 					rowSpan={{ base: "1", md: "2" }}
-					width={{ base: "full", md: "400px" }}
+					// width={{ base: "full", md: "400px" }}
 					h='100%'>
 					<Image
 						id='github-top-langs'
@@ -65,7 +67,7 @@ const GitHubStats = () => {
 				</GridItem>
 				<GridItem
 					// border='1px solid red'
-					width={{ base: "full", md: "400px", lg: "600px" }}
+					// width={{ base: "full", md: "400px", lg: "600px" }}
 					h='100%'>
 					<Image
 						id='github-stats-card'

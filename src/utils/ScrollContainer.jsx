@@ -181,7 +181,7 @@ export default function ScrollContainer() {
 						tools='HTML | CSS | ReactJS | NodeJS | ExpressJS | MongoDB'
 						tag='Indian physical and online jewelry retailer.'
 						span='5 days'
-						title='Intelligent Code Editor'
+						title='Online jewelry shopping with elegance.'
 						img={"caratlane.png"}
 						// typePlan=''
 						checked={true}
